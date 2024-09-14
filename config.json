@@ -1,0 +1,12 @@
+{
+    "HOST": "192.168.0.1",
+    "PORT": 80,
+    "WEB_UI_PASSWORD": "<ZTE Web UI Password>",
+    "COOKIE": null,
+    "MSG_STORE_DIRECTORY": "<local-dir-or-absolute-path>",
+
+    "TRANSFER_TO_HOST": "<ssh hostname or IP or null if you don't want this feature>",
+    "TRANSFER_TO_PORT": 22,
+    "TRANSFER_TO_USER": "<ssh username or null if you don't want to transfer>",
+    "TRANSFER_TO_PATH": "<remote directory path or null if you don't want this feature>"
+}

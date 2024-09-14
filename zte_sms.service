@@ -1,0 +1,34 @@
+[Unit]
+Description=Service that runs SMS checker service periodically on ZTE mobile/LTE routers to read SMSs-es, store them locally, and upload them to remote host
+After=network.target
+
+[Service]
+User=loki
+WorkingDirectory=/home/loki/remote_pycharm_projects/zte
+ExecStart=/home/loki/remote_pycharm_projects/zte/venv/bin/python3.11 /home/loki/remote_pycharm_projects/zte/read_sms_zte.py
+StandardOutput=append:/home/loki/log_pirovac_zte_sms_service.log
+StandardError=append:/home/loki/log_pirovac_zte_sms_service.err.log
+Restart=always
+RestartSec=30
+StartLimitInterval=0
+
+[Timer]
+OnUnitActiveSec=60min
+
+[Install]
+WantedBy=multi-user.target
+
+# install the service via:
+# sudo cp <this file name with extension .service> /lib/systemd/system/
+
+# start service via
+# sudo systemctl start <unit file name>
+
+# check status via
+# sudo systemctl status <unit file name>
+
+# enable on boot:
+# sudo systemctl enable <unit file name>
+
+# reload and apply changes
+# sudo systemctl daemon-reload
