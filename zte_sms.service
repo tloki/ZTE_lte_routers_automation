@@ -1,19 +1,16 @@
 [Unit]
 Description=Service that runs SMS checker service periodically on ZTE mobile/LTE routers to read SMSs-es, store them locally, and upload them to remote host
 After=network.target
+StartLimitIntervalSec=0
 
 [Service]
-User=loki
-WorkingDirectory=/home/loki/remote_pycharm_projects/zte
-ExecStart=/home/loki/remote_pycharm_projects/zte/venv/bin/python3.11 /home/loki/remote_pycharm_projects/zte/read_sms_zte.py
-StandardOutput=append:/home/loki/log_pirovac_zte_sms_service.log
-StandardError=append:/home/loki/log_pirovac_zte_sms_service.err.log
+User=<your user>
+WorkingDirectory=/home/<your_user>/path_to/ZTE_lte_routers_automation
+ExecStart=/home/<your_user>/path_to/ZTE_lte_routers_automation/venv/bin/python3.11 /home/<your_user>/path_to/ZTE_lte_routers_automation/read_sms_zte.py
+StandardOutput=append:/home/<user>/log_zte_sms.log
+StandardError=append:/home/loki/log_zte_sms.err.log
 Restart=always
 RestartSec=30
-StartLimitInterval=0
-
-[Timer]
-OnUnitActiveSec=60min
 
 [Install]
 WantedBy=multi-user.target

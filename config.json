@@ -4,6 +4,7 @@
     "WEB_UI_PASSWORD": "<ZTE Web UI Password>",
     "COOKIE": null,
     "MSG_STORE_DIRECTORY": "<local-dir-or-absolute-path>",
+    "SMS_CHECK_PERIOD_SECONDS": 3600,
 
     "TRANSFER_TO_HOST": "<ssh hostname or IP or null if you don't want this feature>",
     "TRANSFER_TO_PORT": 22,
