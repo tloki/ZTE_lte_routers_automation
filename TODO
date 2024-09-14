@@ -1,2 +1,5 @@
 - sending SMS-es
 - deleting SMS-es from storage
+- fix logging (not working atm seems to be)
+- test (especially for errors)
+- cleanup maybe
